@@ -3,298 +3,367 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TOP UP CASH</title>
-
+<meta name="description" content="TOP UP CASH - Top up jwèt, kat ak abònman, marketplace ak sèvis teknik an Ayiti.">
+<title>TOP UP CASH 🇭🇹</title>
 <style>
 *{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f6f8;
-  color:#111827;
+:root{
+  --bg:#07101f;--bg2:#0b1730;--card:#101e35;--card2:#142542;
+  --blue:#2f6cff;--purple:#7138ff;--text:#f7f9ff;--muted:#aebbd0;
+  --green:#18c96e;--orange:#ff9d1c;--border:rgba(255,255,255,.12)
 }
-
-header{
-  background:#111827;
-  color:white;
-  padding:22px 15px;
-  text-align:center;
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#06101f,#09152a 45%,#06101e);color:var(--text)}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.topbar{background:#040a14;color:#cbd5e1;font-size:13px;padding:8px 18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.header{background:#081226;border-bottom:1px solid var(--border);padding:14px 4%;display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:20}
+.logo{font-size:23px;font-weight:900;line-height:.9;min-width:145px}
+.logo span{color:#6f5cff}
+.search{display:flex;flex:1;max-width:600px}
+.search input{width:100%;border:0;border-radius:10px 0 0 10px;padding:13px;background:white;color:#111;outline:0}
+.search button{border:0;border-radius:0 10px 10px 0;background:var(--purple);color:#fff;padding:0 18px;cursor:pointer}
+.header-actions{display:flex;gap:8px}
+.btn{border:0;border-radius:9px;padding:11px 16px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer}
+.btn.alt{background:transparent;border:1px solid #71809b}
+.btn.green{background:#12a95c}
+.cart{font-size:20px}
+.nav{display:flex;gap:8px;overflow-x:auto;background:#0b1426;padding:8px 4%;border-bottom:1px solid var(--border)}
+.nav button{white-space:nowrap;border:0;background:transparent;color:#d9e2f2;padding:10px 13px;border-radius:8px;cursor:pointer}
+.nav button:hover,.nav button.active{background:#1c3b77;color:#fff}
+.container{max-width:1200px;margin:auto;padding:20px}
+.hero{border-radius:22px;padding:42px 35px;background:
+ radial-gradient(circle at 75% 35%,rgba(102,49,255,.75),transparent 30%),
+ linear-gradient(120deg,#17104d,#4a17a8 55%,#102c75);overflow:hidden;position:relative}
+.hero:after{content:"🎮 💎 📱";position:absolute;right:4%;bottom:18px;font-size:80px;opacity:.25}
+.hero h1{font-size:clamp(34px,6vw,62px);max-width:650px;margin:0 0 15px}
+.hero h1 span{color:#66b6ff}
+.hero p{font-size:18px;line-height:1.6;color:#e6eaff;max-width:650px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.trust{display:flex;gap:18px;flex-wrap:wrap;color:#dce6f7;font-size:14px}
+.quick{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}
+.quick div{background:#0d1b31;border:1px solid var(--border);padding:17px 10px;border-radius:12px;text-align:center}
+.quick b{display:block;margin-top:7px}
+.section{margin-top:28px}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.section-head h2{margin:0;font-size:24px}
+.section-head a{color:#68a4ff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:linear-gradient(180deg,#12223b,#0d1a2e);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:0 8px 30px rgba(0,0,0,.16)}
+.game-img,.product-img{height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:900;text-align:center;padding:10px}
+.game-img{background:linear-gradient(135deg,#20204e,#5730ba)}
+.game-img.green{background:linear-gradient(135deg,#165d39,#72b92e)}
+.game-img.orange{background:linear-gradient(135deg,#6b2a0b,#f09b26)}
+.game-img.blue{background:linear-gradient(135deg,#073c72,#1486d5)}
+.card h3{margin:12px 0 7px}
+.card p{color:var(--muted);font-size:14px;line-height:1.45}
+.price{font-weight:800;margin:9px 0}
+.card .btn{width:100%}
+.split{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:14px}
+.payment-box,.cash-box{background:#0d1b31;border:1px solid var(--border);border-radius:14px;padding:18px}
+.payments{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.pay{border-radius:10px;padding:15px;color:white;font-weight:800;text-align:center}
+.mon{background:#d21f2f}.nat{background:#13a64a}
+.steps{margin:14px 0 0;padding-left:20px;color:#d7e0ef;line-height:1.8}
+.market-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.product-img{background:linear-gradient(135deg,#e8edf5,#8293ad);color:#101828}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.service{padding:18px;background:#10223a;border:1px solid var(--border);border-radius:12px}
+.service .ico{font-size:30px}
+.service h3{margin:8px 0}
+.service p{color:var(--muted);margin:0}
+.notice{padding:14px;border-radius:12px;background:#182844;border-left:4px solid var(--blue);color:#dbe6f7;margin-top:12px}
+.footer{margin-top:40px;background:#040b16;padding:35px 4%;border-top:1px solid var(--border)}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:25px}
+.footer h3{margin-top:0}
+.footer p,.footer a{color:#aebbd0;display:block;margin:9px 0}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:50;padding:20px}
+.modal.show{display:flex;align-items:center;justify-content:center}
+.modal-box{background:#0d1a2d;border:1px solid var(--border);border-radius:16px;padding:22px;max-width:500px;width:100%;max-height:90vh;overflow:auto}
+.close{float:right;background:none;border:0;color:#fff;font-size:25px;cursor:pointer}
+.form-group{margin:12px 0}
+.form-group label{display:block;margin-bottom:6px;font-weight:700}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px;border-radius:9px;border:1px solid #33445f;background:#091326;color:white}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#102b1e;border:1px solid #1eb76a;color:#dfffea;padding:13px 18px;border-radius:10px;display:none;z-index:60}
+.toast.show{display:block}
+@media(max-width:900px){
+ .grid{grid-template-columns:repeat(2,1fr)} .market-grid{grid-template-columns:repeat(2,1fr)}
+ .split{grid-template-columns:1fr} .service-grid{grid-template-columns:repeat(2,1fr)}
+ .quick{grid-template-columns:repeat(3,1fr)} .footer-grid{grid-template-columns:1fr 1fr}
 }
-
-header h1{
-  margin:0;
-  font-size:30px;
+@media(max-width:600px){
+ .header{flex-wrap:wrap}.logo{min-width:auto}.search{order:3;flex-basis:100%}
+ .header-actions{margin-left:auto}.hero{padding:30px 20px}.hero:after{font-size:45px}
+ .grid,.market-grid,.service-grid{grid-template-columns:1fr 1fr}.quick{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr}.container{padding:13px}
+ .hero h1{font-size:38px}.hero p{font-size:16px}
 }
-
-header p{
-  margin:8px 0 0;
-}
-
-nav{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  background:white;
-  padding:12px;
-}
-
-nav button{
-  border:0;
-  border-radius:20px;
-  padding:10px 14px;
-  background:#e5e7eb;
-  white-space:nowrap;
-  font-weight:bold;
-}
-
-.container{
-  max-width:700px;
-  margin:auto;
-  padding:15px;
-}
-
-.hero{
-  background:#111827;
-  color:white;
-  padding:25px;
-  border-radius:18px;
-  margin-bottom:18px;
-}
-
-.hero h2{
-  margin-top:0;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.card{
-  background:white;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 3px 12px #0001;
-}
-
-.card .icon{
-  font-size:30px;
-}
-
-.card h3{
-  margin:8px 0 5px;
-}
-
-.card p{
-  margin:0;
-  color:#6b7280;
-  font-size:14px;
-}
-
-@media(max-width:450px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-}
+@media(max-width:390px){.grid,.market-grid,.service-grid,.quick{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
 
-<header>
-<h1>🔥 TOP UP CASH</h1>
-<p>Gaming • Marketplace • Services • Paiements</p>
+<div class="topbar">
+  <span>📍 Haiti</span><span>💬 Support 24/7</span><span>📞 +509 XX XX XX XX</span>
+  <span>🇭🇹 TOP UP CASH — Rapid • Sekirize • Fasil</span>
+</div>
+
+<header class="header">
+  <a class="logo" href="#home">💳 TOP UP<br><span>CASH</span></a>
+  <form class="search" onsubmit="searchSite(event)">
+    <input id="searchInput" placeholder="Rechèch jwèt, sèvis oswa pwodwi...">
+    <button>🔎</button>
+  </form>
+  <div class="header-actions">
+    <button class="btn alt" onclick="openModal('accountModal')">Konekte</button>
+    <button class="btn" onclick="openModal('accountModal')">Kont</button>
+    <button class="btn alt cart" onclick="showToast('Panyen an pare pou itilize.')">🛒 <span id="cartCount">0</span></button>
+  </div>
 </header>
 
-<nav>
-<button>🏠 Accueil</button>
-<button>🎮 Gaming</button>
-<button>💳 Cartes</button>
-<button>🛍️ Marketplace</button>
-<button>🛠️ Services</button>
-<button>💰 Paiements</button>
+<nav class="nav">
+  <button class="active" onclick="go('home',this)">🏠 Akèy</button>
+  <button onclick="go('gaming',this)">🎮 Top Up Jwèt</button>
+  <button onclick="go('cards',this)">💳 Kat & Abònman</button>
+  <button onclick="go('market',this)">🛍️ Marketplace</button>
+  <button onclick="go('services',this)">🛠️ Services Teknik</button>
+  <button onclick="go('payments',this)">💰 Peman</button>
+  <button onclick="go('contact',this)">📞 Kontak</button>
 </nav>
 
-<div class="container">
+<main class="container">
 
-<div class="hero">
-<h2>Bienvenue sur TOP UP CASH 🚀</h2>
-<p>Top up jwèt, achte pwodwi, jwenn sèvis epi peye fasil.</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">🎮</div>
-<h3>Gaming</h3>
-<p>Free Fire, PUBG, eFootball, DLS...</p>
-</div>
-
-<div class="card">
-<div class="icon">💳</div>
-<h3>Cartes virtuelles</h3>
-<p>Kat vityèl ki disponib pou kliyan yo.</p>
-</div>
-
-<div class="card">
-<div class="icon">🛍️</div>
-<h3>Marketplace</h3>
-<p>Vann epi achte pwodwi.</p>
-</div>
-
-<div class="card">
-<div class="icon">🛠️</div>
-<h3>Services</h3>
-<p>Elektrik, photovoltaïque, sheetrock, plonbri, Windows.</p>
-</div>
-
-</div>
-nav button{
-  border:0;
-  border-radius:20px;
-  padding:10px 14px;
-  background:#e5e7eb;
-  white-space:nowrap;
-  font-weight:bold;
-}
-
-.container{
-  max-width:700px;
-  margin:auto;
-  padding:15px;
-}
-
-.hero{
-  background:#111827;
-  color:white;
-  padding:25px;
-  border-radius:18px;
-  margin-bottom:18px;
-}
-
-.hero h2{
-  margin-top:0;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.card{
-  background:white;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 3px 12px #0001;
-}
-
-.card .icon{
-  font-size:30px;
-}
-
-.card h3{
-  margin:8px 0 5px;
-}
-
-.card p{
-  margin:0;
-  color:#6b7280;
-  font-size:14px;
-}
-
-.btn{
-  display:block;
-  width:100%;
-  border:0;
-  border-radius:10px;
-  padding:13px;
-  margin-top:12px;
-  background:#111827;
-  color:white;
-  font-weight:bold;
-}
-
-.product{
-  background:white;
-  padding:18px;
-  border-radius:16px;
-  margin-bottom:12px;
-  box-shadow:0 3px 12px #0001;
-}
-
-.section{
-  display:none;
-}
-
-.section.active{
-  display:block;
-}
-
-@media(max-width:450px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>🔥 TOP UP CASH</h1>
-<p>Gaming • Marketplace • Services • Paiements</p>
-</header>
-
-<nav>
-<button onclick="show('home')">🏠 Accueil</button>
-<button onclick="show('gaming')">🎮 Gaming</button>
-<button onclick="show('cards')">💳 Cartes</button>
-<button onclick="show('market')">🛍️ Marketplace</button>
-<button onclick="show('services')">🛠️ Services</button>
-<button onclick="show('payments')">💰 Paiements</button>
-</nav>
-
-<div class="container">
-
-<section id="home" class="section active">
-
-<div class="hero">
-<h2>Bienvenue sur TOP UP CASH 🚀</h2>
-<p>Top up jwèt, achte pwodwi, jwenn sèvis epi peye fasil.</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">🎮</div>
-<h3>Gaming</h3>
-<p>Free Fire, PUBG, eFootball, DLS ak lòt jwèt.</p>
-<button class="btn" onclick="show('gaming')">Gade Gaming</button>
-</div>
-
-<div class="card">
-<div class="icon">💳</div>
-<h3>Cartes virtuelles</h3>
-<p>Kat vityèl selon disponiblite.</p>
-<button class="btn" onclick="show('cards')">Gade Cartes</button>
-</div>
-
-<div class="card">
-<div class="icon">🛍️</div>
-<h3>Marketplace</h3>
-<p>Vann epi achte pwodwi.</p>
-<button class="btn" onclick="show('market')">Gade Marketplace</button>
-</div>
-
-<div class="card">
-<div class="icon">🛠️</div>
-<h3>Services</h3>
-<p>Elektrik, photovoltaïque, sheetrock, plonbri ak Windows.</p>
-<button class="btn" onclick="show('services')">Gade Services</button>
-</div>
-
-</div>
+<section id="home" class="hero">
+  <h1>Top up, Peye,<br><span>Ekonomize!</span></h1>
+  <p>Top up jwèt ou yo, achte kat ak abònman, jwenn pwodwi sou Marketplace epi mande sèvis teknik — tout nan yon sèl kote.</p>
+  <div class="hero-actions">
+    <button class="btn" onclick="go('gaming')">Top up kounye a →</button>
+    <button class="btn alt" onclick="openModal('accountModal')">Kreye kont gratis</button>
+  </div>
+  <div class="trust">
+    <span>✅ Rapid</span><span>🔒 Sekirize</span><span>💰 Pri klè</span><span>🎧 Support 24/7</span>
+  </div>
 </section>
+
+<div class="quick">
+  <div>🎮<b>Top Up Jwèt</b><small>Top up jwèt ou yo</small></div>
+  <div>💳<b>Kat & Abos</b><small>Netflix, Spotify...</small></div>
+  <div>🛍️<b>Marketplace</b><small>Achte & vann</small></div>
+  <div>🛠️<b>Services Tech</b><small>Travay teknik</small></div>
+  <div>💰<b>Top Up Cash</b><small>Ajoute lajan</small></div>
+</div>
+
+<section id="gaming" class="section">
+ <div class="section-head"><h2>🎮 TOP UP JEUX POPILÈ</h2><a href="#gaming">Gade tout →</a></div>
+ <div class="grid">
+  <article class="card"><div class="game-img">FREE FIRE</div><h3>Free Fire 💎</h3><p>Diamonds pou kont Free Fire.</p><div class="price">A pati de 50 HTG</div><button class="btn" onclick="order('Free Fire Diamonds')">Top up</button></article>
+  <article class="card"><div class="game-img orange">PUBG<br>MOBILE</div><h3>PUBG Mobile UC</h3><p>UC pou PUBG Mobile.</p><div class="price">A pati de 100 HTG</div><button class="btn" onclick="order('PUBG Mobile UC')">Top up</button></article>
+  <article class="card"><div class="game-img blue">eFOOTBALL</div><h3>eFootball Points</h3><p>Points pou eFootball.</p><div class="price">A pati de 80 HTG</div><button class="btn" onclick="order('eFootball Points')">Top up</button></article>
+  <article class="card"><div class="game-img">DLS</div><h3>DLS Coins</h3><p>Coins pou Dream League Soccer.</p><div class="price">A pati de 60 HTG</div><button class="btn" onclick="order('DLS Coins')">Top up</button></article>
+  <article class="card"><div class="game-img green">BIG FARM</div><h3>Big Farm Mobile</h3><p>Ressources ak kredi jwèt.</p><div class="price">A pati de 50 HTG</div><button class="btn" onclick="order('Big Farm Mobile')">Top up</button></article>
+  <article class="card"><div class="game-img green">HAY DAY</div><h3>Hay Day</h3><p>Resous ak sèvis pou jwèt la.</p><div class="price">A pati de 50 HTG</div><button class="btn" onclick="order('Hay Day')">Top up</button></article>
+  <article class="card"><div class="game-img">🎮</div><h3>Call of Duty</h3><p>CP pou Call of Duty.</p><div class="price">Pri selon pake</div><button class="btn" onclick="order('Call of Duty')">Top up</button></article>
+  <article class="card"><div class="game-img blue">🎮</div><h3>Plis jwèt</h3><p>Ekri nou si jwèt ou bezwen an pa nan lis la.</p><div class="price">Sou demann</div><button class="btn" onclick="contactWhatsApp('Mwen bezwen yon lòt jwèt')">Mande</button></article>
+ </div>
+</section>
+
+<section id="payments" class="section">
+ <div class="split">
+  <div class="payment-box">
+   <h2>💰 Peman</h2>
+   <p>Nou ka prepare kòmand ou pou peman MonCash oswa NatCash.</p>
+   <div class="payments"><div class="pay mon">MonCash</div><div class="pay nat">NatCash</div></div>
+   <div class="notice">⚠️ Pa voye lajan sou yon nimewo ki pa konfime pa TOP UP CASH. Verifikasyon peman fèt anvan sèvis la egzekite.</div>
+  </div>
+  <div class="payment-box">
+   <h2>🔐 Kijan kòmand lan mache?</h2>
+   <ol class="steps">
+    <li>Chwazi pwodwi oswa sèvis la.</li>
+    <li>Ranpli enfòmasyon ki nesesè pou kòmand lan.</li>
+    <li>Chwazi MonCash oswa NatCash.</li>
+    <li>Nou verifye peman an.</li>
+    <li>Apre verifikasyon, kòmand lan trete.</li>
+   </ol>
+  </div>
+  <div class="cash-box">
+   <h2>💵 Top Up Cash</h2>
+   <p>Bezwen ajoute lajan? Kontakte sèvis la pou jwenn enstriksyon peman ki ajou.</p>
+   <button class="btn green" onclick="openModal('orderModal','Top Up Cash')">Demande Top Up Cash</button>
+  </div>
+ </div>
+</section>
+
+<section id="cards" class="section">
+ <div class="section-head"><h2>💳 Kat & Abònman</h2><a href="#cards">Gade tout →</a></div>
+ <div class="grid">
+  <article class="card"><div class="game-img">N</div><h3>Netflix</h3><p>Kat/abònman selon disponiblite.</p><div class="price">A pati de 350 HTG</div><button class="btn" onclick="order('Netflix')">Achte</button></article>
+  <article class="card"><div class="game-img green">♫</div><h3>Spotify</h3><p>Abònman oswa gift card.</p><div class="price">A pati de 250 HTG</div><button class="btn" onclick="order('Spotify')">Achte</button></article>
+  <article class="card"><div class="game-img blue">DISNEY+</div><h3>Disney+</h3><p>Selon disponiblite.</p><div class="price">A pati de 400 HTG</div><button class="btn" onclick="order('Disney+')">Achte</button></article>
+  <article class="card"><div class="game-img orange">▶</div><h3>Google Play</h3><p>Gift card selon peyi ak valè.</p><div class="price">A pati de 150 HTG</div><button class="btn" onclick="order('Google Play')">Achte</button></article>
+ </div>
+</section>
+
+<section id="market" class="section">
+ <div class="section-head"><h2>🛍️ MARKETPLACE</h2><a href="#market">Gade tout →</a></div>
+ <p style="color:var(--muted)">Achte ak vann pwodwi sou platfòm lan. Anons yo dwe respekte règ platfòm lan.</p>
+ <div class="market-grid">
+  <article class="card"><div class="product-img">📱</div><h3>Telefòn</h3><p>iPhone, Samsung ak lòt modèl.</p><button class="btn" onclick="openModal('orderModal','Marketplace - Telefòn')">Mwen enterese</button></article>
+  <article class="card"><div class="product-img">🎮</div><h3>PS5 / Console</h3><p>Console ak accessoires.</p><button class="btn" onclick="openModal('orderModal','Marketplace - Console')">Mwen enterese</button></article>
+  <article class="card"><div class="product-img">💻</div><h3>Laptop</h3><p>PC pou travay, lekòl ak gaming.</p><button class="btn" onclick="openModal('orderModal','Marketplace - Laptop')">Mwen enterese</button></article>
+  <article class="card"><div class="product-img">⌚</div><h3>Mont & Accessoires</h3><p>Pwodwi selon disponiblite.</p><button class="btn" onclick="openModal('orderModal','Marketplace - Accessoires')">Mwen enterese</button></article>
+ </div>
+ <button class="btn" style="margin-top:14px;width:100%" onclick="openModal('sellModal')">➕ Pibliye yon anons</button>
+</section>
+
+<section id="services" class="section">
+ <div class="section-head"><h2>🛠️ SERVICES TECHNIQUES</h2><a href="#services">Gade tout →</a></div>
+ <div class="service-grid">
+  <article class="service"><div class="ico">⚡</div><h3>Elektrisite</h3><p>Enstalasyon, reparasyon ak antretyen.</p></article>
+  <article class="service"><div class="ico">☀️</div><h3>Photovoltaïque</h3><p>Enstalasyon sistèm solè.</p></article>
+  <article class="service"><div class="ico">🧱</div><h3>Sheetrock</h3><p>Enstalasyon ak reparasyon.</p></article>
+  <article class="service"><div class="ico">🚰</div><h3>Plonbri</h3><p>Travay plonbri ak reparasyon.</p></article>
+  <article class="service"><div class="ico">🪟</div><h3>Windows</h3><p>Enstalasyon ak reparasyon fenèt.</p></article>
+  <article class="service"><div class="ico">🔧</div><h3>Teknik</h3><p>Dyagnostik ak lòt sèvis teknik.</p></article>
+ </div>
+ <button class="btn" style="margin-top:15px" onclick="openModal('serviceModal')">Demande yon sèvis →</button>
+</section>
+
+<section id="contact" class="section">
+ <div class="card" style="text-align:center">
+  <h2>📞 Bezwen èd?</h2>
+  <p>Ekri nou pou yon kòmand, yon sèvis teknik oswa yon pwodwi ou pa wè sou paj la.</p>
+  <button class="btn green" onclick="contactWhatsApp('Bonjou TOP UP CASH, mwen bezwen èd.')">💬 Kontakte nou</button>
+ </div>
+</section>
+
+</main>
+
+<footer class="footer">
+ <div class="footer-grid">
+  <div><div class="logo">💳 TOP UP <span>CASH</span></div><p>Platfòm pou top up jwèt, kat, marketplace, peman ak sèvis teknik an Ayiti.</p></div>
+  <div><h3>Lyen rapid</h3><a href="#home">Akèy</a><a href="#gaming">Top Up Jwèt</a><a href="#cards">Kat & Abònman</a><a href="#market">Marketplace</a></div>
+  <div><h3>Sèvis</h3><a href="#services">Services Techniques</a><a href="#payments">Peman</a><a href="#contact">Kontak</a></div>
+  <div><h3>Peman</h3><p>🔴 MonCash</p><p>🟢 NatCash</p><p>🔒 Verifikasyon anvan egzekisyon</p></div>
+ </div>
+ <div style="max-width:1200px;margin:25px auto 0;border-top:1px solid var(--border);padding-top:15px;color:#7f8da4;text-align:center">
+  © <span id="year"></span> TOP UP CASH — Fait avec ❤️ en Haïti 🇭🇹
+ </div>
+</footer>
+
+<div id="orderModal" class="modal">
+ <div class="modal-box">
+  <button class="close" onclick="closeModal('orderModal')">×</button>
+  <h2>🛒 Fè yon kòmand</h2>
+  <form onsubmit="submitOrder(event)">
+   <div class="form-group"><label>Pwodwi / sèvis</label><input id="orderProduct" name="product" readonly></div>
+   <div class="form-group"><label>Non ou</label><input name="name" required placeholder="Non konplè"></div>
+   <div class="form-group"><label>Nimewo telefòn</label><input name="phone" required placeholder="+509..."></div>
+   <div class="form-group"><label>Metòd peman</label><select name="payment" required><option value="">Chwazi</option><option>MonCash</option><option>NatCash</option></select></div>
+   <div class="form-group"><label>Detay kòmand</label><textarea name="details" rows="4" placeholder="Pou jwèt: UID/ID, server, pake, elatriye."></textarea></div>
+   <button class="btn" style="width:100%">Voye demann lan</button>
+  </form>
+ </div>
+</div>
+
+<div id="serviceModal" class="modal">
+ <div class="modal-box">
+  <button class="close" onclick="closeModal('serviceModal')">×</button>
+  <h2>🛠️ Demande yon sèvis</h2>
+  <form onsubmit="submitService(event)">
+   <div class="form-group"><label>Non</label><input name="name" required></div>
+   <div class="form-group"><label>Telefòn</label><input name="phone" required placeholder="+509..."></div>
+   <div class="form-group"><label>Sèvis</label><select name="service" required><option>Elektrisite</option><option>Photovoltaïque</option><option>Sheetrock</option><option>Plonbri</option><option>Windows</option><option>Lòt sèvis teknik</option></select></div>
+   <div class="form-group"><label>Eksplike travay la</label><textarea name="details" rows="5" required></textarea></div>
+   <button class="btn" style="width:100%">Voye demann</button>
+  </form>
+ </div>
+</div>
+
+<div id="accountModal" class="modal">
+ <div class="modal-box">
+  <button class="close" onclick="closeModal('accountModal')">×</button>
+  <h2>👤 Kont TOP UP CASH</h2>
+  <p style="color:var(--muted)">Sa se yon fòm demo pou premye vèsyon sit la. Nou ka konekte li ak yon backend pita.</p>
+  <div class="form-group"><label>Non</label><input placeholder="Non ou"></div>
+  <div class="form-group"><label>Telefòn / Email</label><input placeholder="Telefòn oswa email"></div>
+  <button class="btn" style="width:100%" onclick="closeModal('accountModal');showToast('Kont demo a pare. Backend ap vini nan pwochen etap la.')">Kontinye</button>
+ </div>
+</div>
+
+<div id="sellModal" class="modal">
+ <div class="modal-box">
+  <button class="close" onclick="closeModal('sellModal')">×</button>
+  <h2>📦 Pibliye yon anons</h2>
+  <p style="color:var(--muted)">Pou kounye a, demann lan pa pibliye otomatikman. Nou ka konekte li ak backend pita.</p>
+  <form onsubmit="submitSell(event)">
+   <div class="form-group"><label>Non</label><input name="name" required></div>
+   <div class="form-group"><label>Telefòn</label><input name="phone" required></div>
+   <div class="form-group"><label>Pwodwi</label><input name="product" required placeholder="Eg. iPhone 13"></div>
+   <div class="form-group"><label>Pri</label><input name="price" placeholder="Eg. 60,000 HTG"></div>
+   <button class="btn" style="width:100%">Voye anons lan</button>
+  </form>
+ </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+function go(id,btn){
+  document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
+  if(btn){document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));btn.classList.add("active")}
+}
+function openModal(id,value=""){
+  document.getElementById(id).classList.add("show");
+  if(id==="orderModal") document.getElementById("orderProduct").value=value;
+}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+window.addEventListener("click",e=>{
+  if(e.target.classList.contains("modal")) e.target.classList.remove("show");
+});
+function showToast(msg){
+  const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"),3500);
+}
+function order(product){
+  openModal("orderModal",product);
+}
+function contactWhatsApp(message){
+  // Ranplase nimewo sa a ak nimewo WhatsApp biznis ou.
+  const number="50900000000";
+  const url="https://wa.me/"+number+"?text="+encodeURIComponent(message);
+  window.open(url,"_blank");
+}
+function submitOrder(e){
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const msg=`Bonjou TOP UP CASH,%0A%0AKòmand: ${f.get("product")}%0ANon: ${f.get("name")}%0ATelefòn: ${f.get("phone")}%0APeman: ${f.get("payment")}%0ADetay: ${f.get("details")||"N/A"}`;
+  closeModal("orderModal");
+  window.open("https://wa.me/50900000000?text="+msg,"_blank");
+}
+function submitService(e){
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const msg=`Bonjou TOP UP CASH,%0A%0ASèvis: ${f.get("service")}%0ANon: ${f.get("name")}%0ATelefòn: ${f.get("phone")}%0ADetay: ${f.get("details")}`;
+  closeModal("serviceModal");
+  window.open("https://wa.me/50900000000?text="+msg,"_blank");
+}
+function submitSell(e){
+  e.preventDefault();
+  closeModal("sellModal");
+  showToast("Demann anons lan resevwa. Nou pral konekte sa ak backend pita.");
+}
+function searchSite(e){
+  e.preventDefault();
+  const q=document.getElementById("searchInput").value.trim().toLowerCase();
+  if(!q)return;
+  const sections={gaming:"gaming",free:"gaming",pubg:"gaming",efootball:"gaming",dls:"gaming","big farm":"gaming","hay day":"gaming",netflix:"cards",spotify:"cards",disney:"cards","google play":"cards",marketplace:"market",telefòn:"market",laptop:"market",ps5:"market",elektrisite:"services",photovoltaïque:"services",sheetrock:"services",plonbri:"services",windows:"services",peman:"payments",moncash:"payments",natcash:"payments"};
+  let target=null;
+  for(const key in sections){if(q.includes(key)){target=sections[key];break}}
+  if(target)document.getElementById(target).scrollIntoView({behavior:"smooth"});
+  else showToast("Nou pa jwenn rezilta a. Eseye: Free Fire, Netflix, Marketplace, Elektrisite...");
+}
+</script>
+</body>
+</html>
