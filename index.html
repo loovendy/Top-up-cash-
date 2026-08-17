@@ -4,11 +4,297 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TOP UP CASH</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f6f8;
+  color:#111827;
+}
+
+header{
+  background:#111827;
+  color:white;
+  padding:22px 15px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  margin:8px 0 0;
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  background:white;
+  padding:12px;
+}
+
+nav button{
+  border:0;
+  border-radius:20px;
+  padding:10px 14px;
+  background:#e5e7eb;
+  white-space:nowrap;
+  font-weight:bold;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:15px;
+}
+
+.hero{
+  background:#111827;
+  color:white;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:18px;
+}
+
+.hero h2{
+  margin-top:0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.card .icon{
+  font-size:30px;
+}
+
+.card h3{
+  margin:8px 0 5px;
+}
+
+.card p{
+  margin:0;
+  color:#6b7280;
+  font-size:14px;
+}
+
+@media(max-width:450px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
+<header>
 <h1>🔥 TOP UP CASH</h1>
 <p>Gaming • Marketplace • Services • Paiements</p>
+</header>
 
-</body>
-</html>
+<nav>
+<button>🏠 Accueil</button>
+<button>🎮 Gaming</button>
+<button>💳 Cartes</button>
+<button>🛍️ Marketplace</button>
+<button>🛠️ Services</button>
+<button>💰 Paiements</button>
+</nav>
+
+<div class="container">
+
+<div class="hero">
+<h2>Bienvenue sur TOP UP CASH 🚀</h2>
+<p>Top up jwèt, achte pwodwi, jwenn sèvis epi peye fasil.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🎮</div>
+<h3>Gaming</h3>
+<p>Free Fire, PUBG, eFootball, DLS...</p>
+</div>
+
+<div class="card">
+<div class="icon">💳</div>
+<h3>Cartes virtuelles</h3>
+<p>Kat vityèl ki disponib pou kliyan yo.</p>
+</div>
+
+<div class="card">
+<div class="icon">🛍️</div>
+<h3>Marketplace</h3>
+<p>Vann epi achte pwodwi.</p>
+</div>
+
+<div class="card">
+<div class="icon">🛠️</div>
+<h3>Services</h3>
+<p>Elektrik, photovoltaïque, sheetrock, plonbri, Windows.</p>
+</div>
+
+</div>
+nav button{
+  border:0;
+  border-radius:20px;
+  padding:10px 14px;
+  background:#e5e7eb;
+  white-space:nowrap;
+  font-weight:bold;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:15px;
+}
+
+.hero{
+  background:#111827;
+  color:white;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:18px;
+}
+
+.hero h2{
+  margin-top:0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.card .icon{
+  font-size:30px;
+}
+
+.card h3{
+  margin:8px 0 5px;
+}
+
+.card p{
+  margin:0;
+  color:#6b7280;
+  font-size:14px;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:10px;
+  padding:13px;
+  margin-top:12px;
+  background:#111827;
+  color:white;
+  font-weight:bold;
+}
+
+.product{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  margin-bottom:12px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+@media(max-width:450px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🔥 TOP UP CASH</h1>
+<p>Gaming • Marketplace • Services • Paiements</p>
+</header>
+
+<nav>
+<button onclick="show('home')">🏠 Accueil</button>
+<button onclick="show('gaming')">🎮 Gaming</button>
+<button onclick="show('cards')">💳 Cartes</button>
+<button onclick="show('market')">🛍️ Marketplace</button>
+<button onclick="show('services')">🛠️ Services</button>
+<button onclick="show('payments')">💰 Paiements</button>
+</nav>
+
+<div class="container">
+
+<section id="home" class="section active">
+
+<div class="hero">
+<h2>Bienvenue sur TOP UP CASH 🚀</h2>
+<p>Top up jwèt, achte pwodwi, jwenn sèvis epi peye fasil.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🎮</div>
+<h3>Gaming</h3>
+<p>Free Fire, PUBG, eFootball, DLS ak lòt jwèt.</p>
+<button class="btn" onclick="show('gaming')">Gade Gaming</button>
+</div>
+
+<div class="card">
+<div class="icon">💳</div>
+<h3>Cartes virtuelles</h3>
+<p>Kat vityèl selon disponiblite.</p>
+<button class="btn" onclick="show('cards')">Gade Cartes</button>
+</div>
+
+<div class="card">
+<div class="icon">🛍️</div>
+<h3>Marketplace</h3>
+<p>Vann epi achte pwodwi.</p>
+<button class="btn" onclick="show('market')">Gade Marketplace</button>
+</div>
+
+<div class="card">
+<div class="icon">🛠️</div>
+<h3>Services</h3>
+<p>Elektrik, photovoltaïque, sheetrock, plonbri ak Windows.</p>
+<button class="btn" onclick="show('services')">Gade Services</button>
+</div>
+
+</div>
+</section>
